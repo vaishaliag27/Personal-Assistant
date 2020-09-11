@@ -1,4 +1,4 @@
-# Personal-Assistance
+# Personal-Assistant
 
 A personal- assistance made by converting the OS based program into a menu driven program using Python Code.
 Used different libraries, packages and modules available in python like:
