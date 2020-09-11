@@ -5,8 +5,6 @@ import wikipedia
 import pytube
 import datetime
 import speech_recognition as sr
-import re,requests,subprocess,urllib.parse,urllib.request
-from bs4 import BeautifulSoup 
 
 def wish():
 	hour = int(datetime.datetime.now().hour) 		#it will give the hour value from the current time
@@ -16,6 +14,7 @@ def wish():
 		pyttsx3.speak("Hi!Good Afternoon Boss..")
 	else:
 		pyttsx3.speak("Hi!Good Evening Boss..")
+
 def time():
 	strTime = datetime.datetime.now().strftime("%H:%M:%S") #it will tell the current time and strftime formats the time in H:M:S
 	pyttsx3.speak(f"Boss,The Time is {strTime}")
@@ -33,7 +32,6 @@ def songs():
 	elif("jatta" in ch):webbrowser.open("https://youtu.be/qckMuki39xI")
 	elif("lover" in ch):webbrowser.open("https://youtu.be/sIsXIJ9k8aA")
 	else: print("not supported")
-	# pytube.YouTube(url).streams.get_highest_resolution().download('../Video')
 
 def fun():
 	while True:
@@ -100,11 +98,11 @@ if __name__ == "__main__":
 	print("```````````````---------------------------------------------------``````````````")
 	print("```````````````------------------->>LARA<<------------------------``````````````")
 	print("```````````````---------------------------------------------------``````````````")
-	pyttsx3.speak("Welcome here!!I am your personal assistance Laaraa!!! How can i help you Boss?? ")
+	pyttsx3.speak("Welcome here!!I am your personal assistance Laara!!! How can i help you Boss?? ")
 	print()
 	print("Here are the things i can launch for you ")
 	pyttsx3.speak("here are the things i can launch for you-")
-	print("Wikipedia search\nChrome\nYoutube\nplaylist\nTime\nGoogle\nFacebook\nNotepad\nVLC Media Player\nMicrosoft Edge\nControl Panel\nSublime Text Editor\nCommand Prompt\nExit")
+	print("Time\nWikipedia search\nChrome\nYoutube\nPlaylist\nGoogle\nFacebook\nNotepad\nVLC Media Player\nMicrosoft Edge\nControl Panel\nSublime Text Editor\nCommand Prompt\nExit")
 	print()
 	pyttsx3.speak("would you like to type or speak Boss?")
 	print("would you like to type or speak Boss?")
@@ -114,14 +112,13 @@ if __name__ == "__main__":
 	if a == 1:
 		fun()
 	else:
-		print("", end= '')
+		pyttsx3.speak('what can i do for you boss??')
+		print('what can i do for you boss??')
 		r = sr.Recognizer()
 		sr.Microphone()
 		with sr.Microphone() as source:
-			pyttsx3.speak('what can i do for you boss??')
-			print('what can i do for you boss??')
-			pyttsx3.speak('I am listening boss... please wait till i recognize your voice boss...')
 			audio = r.listen(source)
+			pyttsx3.speak('I am listening boss... please wait till i recognize your voice boss...')
 			print(audio)
 			pyttsx3.speak('recognizing done ..')
 			print('recognizing done ..')
