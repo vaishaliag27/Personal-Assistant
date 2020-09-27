@@ -1,9 +1,8 @@
-import pyttsx3
 import os
+import pyttsx3
 import webbrowser
 import wikipedia
 import datetime
-import sys
 import speech_recognition as sr
 
 def wish():
@@ -53,7 +52,7 @@ def songs():										#this function will show the playlist
 		pyttsx3.speak("Try again Boss!!")
 
 def choice(ch):
-		if(ch == '1'):
+		if(ch == '1'):                                                     #this function will work for typing purpose.
 			ip=input("Type anything you want to run/open:").lower()
 			return ip
 			
